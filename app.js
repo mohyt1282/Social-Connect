@@ -2,8 +2,14 @@ require("dotenv").config();
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser =  require('body-parser');
+const encodeDecode = require("./services/encodeDecode")
 const app = express();
 const port=process.env.PORT;
+
+
+app.use(async function (req, res, next) {
+  await encodeDecode.decrypWithSek(req, res, next);
+});
 
 const Routes = require('./routes/index')
 const connection =require('./connection/connection')

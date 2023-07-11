@@ -1,7 +1,7 @@
 const config = require('config');
 const nodemailer = require("nodemailer");
 //sending email
-console.log("hdhdhdhdhdhdhdhfgfh")
+
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -21,11 +21,11 @@ const transporter = nodemailer.createTransport({
         rejectUnauthorized: true
     }
 });
-console.log('process.env.EMAIL_USERNAME: ', process.env.EMAIL_USERNAME);
-console.log("dhdhdjdjdjdjdjdj")
+// console.log('process.env.EMAIL_USERNAME: ', process.env.EMAIL_USERNAME);
+
 const sendEmail = async (to, subject, message) => {
-     console.log('to: ', to);
-     console.log('process.env.EMAIL_USERNAME: ', process.env.EMAIL_USERNAME);
+    //  console.log('to: ', to);
+    //  console.log('process.env.EMAIL_USERNAME: ', process.env.EMAIL_USERNAME);
      let test = await transporter.sendMail({
         // from: config.get('EMAIL_SERVICE').EMAIL,
         

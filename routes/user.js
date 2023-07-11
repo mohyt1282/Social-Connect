@@ -45,4 +45,7 @@ userRoute.get('/myFriends',Auth,controller.user.myFriends)
 
 
 
+
+
+
 module.exports = userRoute;
